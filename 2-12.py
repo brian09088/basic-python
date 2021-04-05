@@ -1,21 +1,14 @@
-n=int(input('n='))
-for y in range(2*n-1,-1,-1):
-    for x in range(8*n):
-        if x-y==0 and y<=n-1: 
-           print('/',end='')
-        elif x-y==6*n and y<=n-1:
-           print('/',end='')
-        elif x+y==2*n-1 and y<=n-1:
-           print('\\',end='')
-        elif x+y==8*n-1 and y<=n-1:
-           print('\\',end='')
-        elif x-y==2*n:
-           print('/',end='') 
-        elif x+y==6*n-1:
-           print('\\',end='')
-        elif y==0:
-           print('-',end='') 
+n=int(input(">"))
+
+for j in range(2*n-1):
+
+    for i in range(3):
+
+        if  i==1:
+            print(" "*(2*n-1-j)+"/"+"_"*2*j+"\\"+" "*(2*n-1-j),end="")
+        elif j<n :
+            print(" "*2*n,end="")
         else:
-           print(' ',end='')
-    print()       
-            
+            print(" "*(n-1-j+n)+"/"+"_"*2*(j-n)+"\\"+" "*(2*n-1-j),end="")
+    print()
+print("/"+"_"*2*(n-1)+"\\"+"/"+"_"*2*(2*n-1)+"\\"+"/"+"_"*2*(n-1)+"\\")

@@ -1,23 +1,11 @@
-#2-22
-n=int(input('n='))
-if n % 2 != 0:
-   for y in range(n-1,-n,-1):
-       for x in range(3*n-2):
-           if  x<=2*n-2 and x+y==n-1 :
-               print('*',end='')
-           elif  x<=2*n-2 and x-y==n-1 :
-               print('*',end='') 
-           elif  x>=2*n-2 and x+y==3*n-3:
-               print('*',end='')
-           elif  x>=2*n-2 and x+y==2*n-2:
-               print('*',end='')
-           elif  x>=2*n-2 and x-y==3*n-3:
-               print('*',end='')
-           elif  x>=2*n-2 and x-y==2*n-2:
-               print('*',end='')     
-           else :
-               print(' ',end='')
-       print()        
-else: 
-    pass
-       
+while True:
+    n=int(input(">"))
+    for j in range(2*n-1):
+        for i in range(2*n-2):
+            print("*" if (i==j or i+j==2*n-2) else " ",end="")
+        for i in range(n):
+            if j<n:
+                print("*" if (i==j or i+j==n-1) else " ",end="")
+            else:
+                print("*" if (i==j-n+1 or i+j-n+1==n-1) else " ",end="")
+        print()

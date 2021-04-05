@@ -1,9 +1,8 @@
-n=int(input('n= '))
-for  b in range(0,-n,-1):
-     for  a in range(4*n-3):
-          if a-b==2*n-2 or a-b==4*n-4 or a+b==0 or a+b==2*n-2:
-             print('*',end='')
-          else:
-             print(' ',end='')
-     print()   
-          
+n=int(input(">"))
+
+print("*"+" "*(2*n-3)+"*"+" "*(2*n-3)+"*")
+
+for j in range(n-2):
+    print(" "*(j+1)+"*"+" "*(2*n-5-2*j)+"*"+" "*(1+2*j)+"*"+" "*(2*n-5-2*j)+"*")
+
+print(" "*(n-1)+"*"+" "*(2*n-3)+"*")

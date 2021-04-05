@@ -1,15 +1,13 @@
-# 3-1 
-n=int(input('n='))
-for a in range(n):
-    for b in range(n):
-        print(" "*(n*(n-a-1)),end='')
-        for c in range(a+1):
-            if b==0 or b==n-1:
-                print(" "*(n-b-1)+str(c+1)*(2*b+1)+" "*(n-b-1),end='')
-            else:
-                print(" "*(n-b-1)+str(c+1)+" "*(n-b-1)+str(c+1)+" "*(n-b-1),end='')
-        print() 
-        
-          
+while True:
+    n=int(input(">"))
+    for k in range(n):
 
+        for j in range(n):
+            print(" "*n*(n-1-k),end="")
 
+            for i in range(k+1):
+                if j==0 or j==n-1:
+                    print(" "*(n-1-j)+str(i+1)*(2*j+1)+" "*(n-1-j),end=" ")
+                else:
+                    print(" "*(n-1-j)+str(i+1)+" "*(2*j-1)+str(i+1)+" "*(n-1-j),end=" ")
+            print()

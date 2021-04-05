@@ -1,30 +1,21 @@
-n=int(input('n='))
+n=int(input(">"))
+m=(3*n+1)//2
 
-for y in range(2*n-1,-1,-1):
-    for x in range(8*n+4):
-        if x-y==0 and y<=n-1: 
-           print('/',end='')
-        elif x-y==2*n:
-           print('/',end='')
-        elif x-y==6*n and y<=n+1:
-           print('/',end='') 
-        elif x-y==6*n and y<=n+1:
-           print('/',end='') 
-        elif x+y==2*n-1 and y<=n-1: 
-           print('\\',end='')
-        elif x+y==6*n-1:
-           print('\\',end='')
-        elif x+y==8*n+3 and y<=n+1:
-           print('\\',end='')
-        elif x+y==8*n+3 and y<=n+1:
-           print('\\',end='') 
-        elif x+y<6*n-1 and x-y>2*n and y>=0:
-           print('-',end='')
-        elif x+y<2*n-1 and x-y>0 and y>=0:
-           print('-',end='')
-        elif x+y<8*n+3 and x-y>6*n and y>=0:
-           print('-',end='')   
+for j in range(2*n):
+
+    for i in range(3):
+
+        if i==0:
+            if j<n:
+                print(" "*2*n,end="")
+            else:
+                print(" "*(n-1-(j-n))+"/"+"_"*2*(j-n)+"\\"+" "*(n-1-(j-n)),end="")
+        elif i==1:
+            print(" "*(2*n-1-j)+"/"+"_"*2*j+"\\"+" "*(2*n-1-j),end="")
         else:
-           print(' ',end='')
-    print()      
-
+            if j<2*n-m:
+                print(" "*2*m,end="")
+            else:
+                print(" "*(m-1-(j-2*n+m))+"/"+"_"*2*(j-2*n+m)+"\\"+" "*(m-1-(j-2*n+m)),end="")
+    print()
+        

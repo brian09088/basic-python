@@ -1,35 +1,25 @@
-# python學習講義2-18
+while True:
+    n=int(input(">"))
+    hh,vv=chr(9472),chr(9474)
+    nw,ne,sw,se=chr(9484),chr(9488),chr(9492),chr(9496)
+    for j in range(n):
 
-hh=chr(9472) # 橫
-vv=chr(9474) # 豎
-nw=chr(9484) #左上
-ne=chr(9488) #右上
-sw=chr(9492) #左下
-se=chr(9496) #右下
-n=int(input('n='))
-for y in range(n,-n-1,-1):
-    for x in range(4*n**2+1):
-        if (y-x/2)%((4*n+1)/2)==1:
-            print(nw,end='')
-        elif (y-x/2)%((4*n+1)/2)==1 and x%(4*n+1)==2*(n-1)+1:
-            print(' ',end='')   
-        elif (y-x/2)%((4*n+1)/2)==1 and x%(4*n+1)==2*n:
-            print(' ',end='')    
-        elif (y-x/2)%((4*n+1)/2)==1 and x%(4*n+1)==0:
-            print(' ',end='')    
-        elif (y-x/2)%((4*n+1)/2)==1 and x%(4*n+1)==2:
-            print(' ',end='')    
-        elif y==0 and x%(4*n-1)==2 and x>4*n-1:
-            print(vv,end='')
-        elif y==0 and x%(4*n-1)==0 and x<=4*n-1:
-            print(vv,end='')
-        else:
-            print(' ',end='')
-    print()        
-            
+        for i in range(n):
 
+            if j==0:
+                print(" "*2*(n-1)+nw+hh*2+ne+" "*2*(n-1),end=" ")
+            else:
+                print(" "*2*(n-1-j)+nw+hh+se+" "*2*(2*j-1)+sw+hh+ne+" "*2*(n-1-j),end=" ")
+        print()
+    for i in range(n):
+        print(vv+" "*2*(2*n-1)+vv,end=" ")
+    print()
+    for j in range(n-1,-1,-1):
 
+        for i in range(n):
 
-
-
-
+            if j==0:
+                print(" "*2*(n-1)+sw+hh*2+se+" "*2*(n-1),end=" ")
+            else:
+                print(" "*2*(n-1-j)+sw+hh+ne+" "*2*(2*j-1)+nw+hh+se+" "*2*(n-1-j),end=" ")
+        print()
